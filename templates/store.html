@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce Store - PayPal Integration</title>
+    <script src="https://www.paypal.com/sdk/js?client-id=AXBqB7m1gKEjAIE8x0ek4SYy7gJk2hcYVxgMCsO9pWvNqIaZPsE5SaGU5EWvd-penHPf103-77eOgqC_&currency=USD"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 50px 5%;
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            width: 100%;
+            max-width: 250px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-card h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-container {
+                padding: 20px 5%;
+                gap: 20px;
+            }
+
+            .product-card {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 20px;
+                padding: 15px 0;
+            }
+
+            .product-card h2 {
+                font-size: 18px;
+            }
+
+            .product-card p {
+                font-size: 14px;
+            }
+
+            .paypal-button-container button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        /* PayPal Button Container Styling */
+        #paypal-button-container {
+            margin-top: 20px;
+            background-color: #0070ba;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .paypal-button-container button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ffc439;
+            border: none;
+            font-size: 16px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .paypal-button-container button:hover {
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Jaya Store</h1>
+    <p>Shop For Business & Marketing</p>
+</header>
+
+<div class="product-container">
+    {% for product in products %}
+    <div class="product-card">
+        <img src="{{ product.image if product.image else 'https://via.placeholder.com/250x150' }}" alt="Product Image">
+        <h2><img src="{{ url_for('static', filename=product.image) }}" alt="Product Image"></h2>
+        <p>Price: ${{ product.price }}</p>
+        <div id="paypal-button-container-{{ loop.index }}"></div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    // Wait for the page to load and render each PayPal button
+    document.addEventListener('DOMContentLoaded', function() {
+        {% for product in products %}
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '{{ product.price }}' // Price of the current product
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Payment Successful! ' + details.payer.name.given_name);
+                });
+            },
+            onError: function(err) {
+                alert('Error occurred while processing the payment.');
+            }
+        }).render('#paypal-button-container-{{ loop.index }}');
+        {% endfor %}
+    });
+</script>
+
+</body>
+</html>

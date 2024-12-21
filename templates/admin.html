@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <script>
+        function showAlert() {
+            alert("Password reset link sent to your email.");
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <div style="background-color: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 300px;">
+        <h2 style="text-align: center;">Admin Login</h2>
+        <form action="/login" method="POST">
+            <div style="margin-bottom: 15px;">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required style="width: 100%; padding: 8px; border: 1px solid #ddd;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required style="width: 100%; padding: 8px; border: 1px solid #ddd;">
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" style="width: 100%; background-color: #4CAF50; color: white; padding: 10px; border: none;">Login</button>
+            </div>
+        </form>
+        <div style="text-align: center; margin-top: 10px;">
+            <a href="/forgot-password" style="color: #007BFF; text-decoration: none;">Forgot Password?</a>
+        </div>
+    </div>
+</body>
+</html>

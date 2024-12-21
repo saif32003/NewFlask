@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaya Who Are We</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Toggle Button -->
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <!-- Navigation Links -->
+            <ul class="navbar-links">
+                <li><a href="{{ url_for('home') }}">الصفحه الرئيسيه</a></li>
+                <li><a href="{{ url_for('services') }}">خدماتنا</a></li>
+                <li><a href="{{ url_for('who_are_we') }}">من نحن</a></li>
+                <li><a href="{{ url_for('contact_us') }}">تواصل معنا</a></li>
+                <li><a href="{{ url_for('store') }}">المتجر</a></li>
+
+            </ul>
+            <!-- Logo -->
+            <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="navbar-logo">
+        </div>
+    </nav>
+  
+    <!-- New Sections for Content -->
+    <section class="who-are-we-section fade-in" id="section1">
+        <h2 style="text-align: center;">من نحن</h2>
+        <p>نحن في JAYA شركاء نجاحك الرقمي. نقدم حلول تسويق إلكتروني مبتكرة وفعالة، مصممة خصيصًا لتحقيق أهدافك التجارية. خبرتنا الواسعة في مجال التسويق الرقمي تمكننا من زيادة وعي العلامة التجارية، وجذب عملاء جدد، وزيادة المبيعات. نؤمن بأن التسويق الرقمي ليس مجرد خيار، بل ضرورة لبقاء أي عمل تجاري في عالم اليوم. نحن لا نبيع خدمات، بل نبيع نتائج.</p>
+    </section>
+
+    <section class="who-are-we-section slide-in" id="section2">
+        <h2 style="text-align: center;">شريكك الاستراتيجي</h2>
+        <p>نحن JAYA شريكك الاستراتيجي في عالم التسويق الرقمي. نقدم لك حلولاً متكاملة ابتداءً من تصميم هويتك البصرية وتطوير موقعك الإلكتروني وحتى إدارة حملاتك الإعلانية على مختلف المنصات. هدفنا هو بناء علامة تجارية قوية ومؤثرة، وتحقيق أقصى عائد على استثماراتك التسويقية.</p>
+    </section>
+
+    <section class="who-are-we-section bounce-in" id="section3">
+        <h2 style="text-align: center;">التجارب المبتكرة</h2>
+        <p>نحن لا نقوم فقط بتسويق منتجاتك وخدماتك، بل نصنع تجارب لا تُنسى. فريقنا من المبدعين والمطورين يجمع بين الفن والتكنولوجيا لابتكار تصميمات جذابة وحلول رقمية مبتكرة. سواء كنت تبحث عن تصميم تطبيق جديد أو إنشاء حملة إعلانية مؤثرة، نحن هنا لتحويل رؤيتك إلى واقع.</p>
+    </section>
+    <div class="fixed-icons">
+        <a href="https://wa.me/96597931941" class="icon-whatsapp">
+            <img src="{{ url_for('static', filename='images/whatsapp c.png') }}" alt="WhatsApp Icon" class="icon-img">
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- First Part -->
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="https://www.tiktok.com/@jaya_business?_t=8rCasNG5f7w&_r=1">
+                        <img src="{{ url_for('static', filename='images/tiktok.png') }}" alt="TikTok">
+                    </a>
+                    <a href="https://www.facebook.com/share/18N58LwyfX/">
+                        <img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook">
+                    </a>
+                    <a href="https://wa.me/96597931941">
+                        <img src="{{ url_for('static', filename='images/whatsapp2.png') }}" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.instagram.com/jayabusinessandmarketing/profilecard/?igsh=MXVmZzRhNjhpNjdzbA==">
+                        <img src="{{ url_for('static', filename='images/instgram.png') }}" alt="Instagram">
+                    </a>
+                    <a href="https://youtube.com/@jayabusinessandmarketingsoluti?si=MRGg_xze7DsvIqId">
+                        <img src="{{ url_for('static', filename='images/youtube.png') }}" alt="YouTube">
+                    </a>
+                </div>
+                <hr>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('home') }}">الصفحه الرئيسيه</a></li>
+                    <li><a href="{{ url_for('services') }}">خدماتنا</a></li>
+                    <li><a href="{{ url_for('who_are_we') }}">من نحن</a></li>
+                    <li><a href="{{ url_for('contact_us') }}">تواصل معنا</a></li>
+                    <li><a href="{{ url_for('store') }}">المتجر</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Image Icon -->
+        <div class="scroll-to-top">
+            <img src="{{ url_for('static', filename='images/top arrow.png') }}" alt="Scroll to Top" onclick="scrollToTop()">
+        </div>
+    </footer>
+</footer>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

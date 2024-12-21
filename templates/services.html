@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaya services</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Toggle Button -->
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <!-- Navigation Links -->
+            <ul class="navbar-links">
+                <li><a href="{{ url_for('home') }}">الصفحه الرئيسيه</a></li>
+                <li><a href="{{ url_for('services') }}">خدماتنا</a></li>
+                <li><a href="{{ url_for('who_are_we') }}">من نحن</a></li>
+                <li><a href="{{ url_for('contact_us') }}">تواصل معنا</a></li>
+                <li><a href="{{ url_for('store') }}">المتجر</a></li>
+
+            </ul>
+            <!-- Logo -->
+            <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="navbar-logo">
+        </div>
+    </nav>
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <h2>خدماتنا</h2>
+            <div class="service-container">
+    
+                <!-- Service 1 -->
+                <div class="service">
+                    <img src="{{ url_for('static', filename='images/social media.jpeg') }}" alt="" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <h3>إدارة حملات السوشيال ميديا</h3>
+                    <p>
+                        تصميم وإدارة الحملات على مختلف منصات التواصل الاجتماعي (مثل فيسبوك، إنستغرام، تويتر، لينكد إن) 
+                        لزيادة التفاعل وتعزيز الوعي بالعلامة التجارية.
+                    </p>
+                </div>
+    
+                <!-- Service 2 -->
+                <div class="service">
+                    <img src="{{ url_for('static', filename='images/writing and implement content.jpeg') }}" alt="" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <h3>كتابة وتطوير المحتوى</h3>
+                    <p>
+                        كتابة محتوى تسويقي مؤثر ومتوافق مع الجمهور المستهدف، بما يشمل المدونات، المقالات، 
+                        والنصوص الإعلانية، مع ضمان جودة وفعالية المحتوى.
+                    </p>
+                </div>
+    
+                <!-- Service 3 -->
+                <div class="service">
+                    <img src="{{ url_for('static', filename='images/creative thinking.png') }}" alt="" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+    
+                    <h3>التصميم الإبداعي</h3>
+                    <p>
+                        تصميم جرافيك مميز لمختلف المنصات الإعلانية والمحتويات التسويقية مثل البروشورات، الشعارات، 
+                        الفيديوهات الترويجية، وصور السوشيال ميديا.
+                    </p>
+                </div>
+    
+                <!-- Service 4 -->
+                <div class="service">
+                    <img src="{{ url_for('static', filename='images/editing services.png') }}" alt="" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <h3>خدمة المونتاج</h3>
+                    <p>
+                        تقديم خدمات تحرير الفيديو بمختلف أنواعه سواء للفيديوهات القصيرة المخصصة للريلز والقصص 
+                        أو الفيديوهات الطويلة للمنصات مثل يوتيوب.
+                    </p>
+                </div>
+    
+                <!-- Service 5 -->
+                <div class="service">
+                    <img src="{{ url_for('static', filename='images/website.png') }}" alt="" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+    
+                    <h3>خدمة إنشاء المواقع الإلكترونية</h3>
+                    <p>
+                        بناء مواقع مخصصة تناسب احتياجات العلامة التجارية، مع تصميم فريد يعكس هويتها ويجذب جمهورها المستهدف. 
+                        إنشاء متاجر إلكترونية شاملة تلبي احتياجات التجارة الإلكترونية، بما في ذلك إدارة المنتجات، الدفع الإلكتروني، 
+                        والشحن.
+                    </p>
+                </div>
+    
+                <!-- Service 6 -->
+                <div class="service">
+                    <img src="{{ url_for('static', filename='images/motion graphics.png') }}" alt="" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+    
+                    <h3>خدمة الموشن جرافيك</h3>
+                    <p>
+                        تصميمات حركية تروي قصتك بشكل مؤثر وملهم. سواء كانت فيديوهات ترويجية، شروحات تعليمية، 
+                        أو إعلانات مبتكرة، فريقنا المتخصص في الموشن جرافيك يخلق محتوى بصري جذاب.
+                    </p>
+                </div>
+    
+                <!-- Service 7 -->
+                <div class="service">
+                    <img src="{{ url_for('static', filename='images/mobile app.png') }}" alt="" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+    
+                    <h3>تصميم تطبيقات الهواتف الذكية</h3>
+                    <p>
+                        حلول مبتكرة لتصميم وتطوير تطبيقات مخصصة تناسب احتياجات عملك، سواء كانت تطبيقات للمتاجر الإلكترونية، 
+                        تطبيقات خدمات، أو تطبيقات ترفيهية.
+                    </p>
+                </div>
+    
+                <!-- Service 8 -->
+                <div class="service">
+                    <img src="{{ url_for('static', filename='images/bags.png') }}" alt="" style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+    
+                    <h3>تصميم حقائب تدريبية</h3>
+                    <p>
+                        تصميم حقائب تدريبية بجودة عالية تغطي جميع جوانب المحتوى التعليمي، وتناسب أحدث أساليب 
+                        التدريب التفاعلي مع إمكانية التخصيص.
+                    </p>
+                </div>
+    
+            </div>
+        </section>
+
+         <!-- Portfolio Section -->
+         <h2 style="
+         text-align: center;
+         font-size: 2em;
+         margin-top: 30px; /* Added margin to the top */
+         margin-bottom: 30px; /* Added margin to the bottom */
+         color: #ffc001;
+         padding-top: 10px;
+         background-color: black;
+         width: 80%; /* Reduced width to 80% of the container */
+         max-width: 300px; /* Set max-width to 300px */
+         margin-left: auto; /* Center horizontally */
+         margin-right: auto; /* Center horizontally */
+         border-radius: 10px;
+         padding-left: 20px;
+         padding-right: 20px;
+       ">
+         بعض اعمالنا
+       </h2>
+                <section class="portfolio-section" id="portfolio">
+                    <div class="portfolio-container">
+                        <!-- Card 1 -->
+                        <div class="portfolio-card" style="margin-top: 50px;">
+                            <video class="portfolio-video" poster="{{ url_for('static', filename='images/milk.jpeg') }}" controls>
+                                <source src="{{ url_for('static', filename='images/milk.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    
+                        <!-- Card 2 -->
+                        <div class="portfolio-card" style="margin-top: 50px;">
+                            <video class="portfolio-video" poster="{{ url_for('static', filename='images/burger.jpeg') }}" controls>
+                                <source src="{{ url_for('static', filename='images/burger.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    
+                        <!-- Card 3 -->
+                        <div class="portfolio-card" style="margin-top: 50px;">
+                            <video class="portfolio-video" poster="{{ url_for('static', filename='images/plane.jpeg') }}" controls>
+                                <source src="{{ url_for('static', filename='images/plane.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    
+                        <!-- Card 4 -->
+                        <div class="portfolio-card" style="margin-top: 50px;">
+                            <video class="portfolio-video" poster="{{ url_for('static', filename='images/clothes.jpeg') }}" controls>
+                                <source src="{{ url_for('static', filename='images/clothes.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    
+                        <!-- Card 5 -->
+                        <div class="portfolio-card">
+                            <video class="portfolio-video" poster="{{ url_for('static', filename='images/jam.jpeg') }}" controls>
+                                <source src="{{ url_for('static', filename='images/jam.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    
+                        <!-- Card 6 -->
+                        <div class="portfolio-card">
+                            <video class="portfolio-video" poster="{{ url_for('static', filename='images/lemon.jpeg') }}" controls>
+                                <source src="{{ url_for('static', filename='images/lemon.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    
+                        <!-- Card 7 -->
+                        <div class="portfolio-card">
+                            <video class="portfolio-video" poster="{{ url_for('static', filename='images/pasta.jpeg') }}" controls>
+                                <source src="{{ url_for('static', filename='images/pasta.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    
+                        <!-- Card 8 -->
+                        <div class="portfolio-card">
+                            <video class="portfolio-video" poster="{{ url_for('static', filename='images/coffe.jpeg') }}" controls>
+                                <source src="{{ url_for('static', filename='images/coffe.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    
+</section>
+<a href="{{ url_for('more_works') }}" class="link">
+    <button class="more-button">
+        المزيد من اعمالنا
+    </button>
+</a>
+<div class="fixed-icons">
+    <a href="https://wa.me/96597931941" class="icon-whatsapp">
+        <img src="{{ url_for('static', filename='images/whatsapp c.png') }}" alt="WhatsApp Icon" class="icon-img">
+    </a>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- First Part -->
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@jaya_business?_t=8rCasNG5f7w&_r=1">
+                    <img src="{{ url_for('static', filename='images/tiktok.png') }}" alt="TikTok">
+                </a>
+                <a href="https://www.facebook.com/share/18N58LwyfX/">
+                    <img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook">
+                </a>
+                <a href="https://wa.me/96597931941">
+                    <img src="{{ url_for('static', filename='images/whatsapp2.png') }}" alt="WhatsApp">
+                </a>
+                <a href="https://www.instagram.com/jayabusinessandmarketing/profilecard/?igsh=MXVmZzRhNjhpNjdzbA==">
+                    <img src="{{ url_for('static', filename='images/instgram.png') }}" alt="Instagram">
+                </a>
+                <a href="https://youtube.com/@jayabusinessandmarketingsoluti?si=MRGg_xze7DsvIqId">
+                    <img src="{{ url_for('static', filename='images/youtube.png') }}" alt="YouTube">
+                </a>
+            </div>
+            <hr>
+            <ul class="footer-links">
+                <li><a href="{{ url_for('home') }}">الصفحه الرئيسيه</a></li>
+                <li><a href="{{ url_for('services') }}">خدماتنا</a></li>
+                <li><a href="{{ url_for('who_are_we') }}">من نحن</a></li>
+                <li><a href="{{ url_for('contact_us') }}">تواصل معنا</a></li>
+                <li><a href="{{ url_for('store') }}">المتجر</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Image Icon -->
+    <div class="scroll-to-top">
+        <img src="{{ url_for('static', filename='images/top arrow.png') }}" alt="Scroll to Top" onclick="scrollToTop()">
+    </div>
+</footer>
+
+    <script src="../static/js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

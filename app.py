@@ -18,11 +18,10 @@ app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}  # Allowed imag
 # Initialize the database
 db = SQLAlchemy(app)
 
-# Configure PayPal SDK with your credentials
 paypalrestsdk.configure({
     "mode": "sandbox",  # Use "sandbox" for testing or "live" for production
-    "client_id": "your-client-id",
-    "client_secret": "your-client-secret"
+    "client_id": "AXBqB7m1gKEjAIE8x0ek4SYy7gJk2hcYVxgMCsO9pWvNqIaZPsE5SaGU5EWvd-penHPf103-77eOgqC_",
+    "client_secret": "EPmMmJq8srfwnv9nCl22BuZtQLc0KmkvKUh7Sck0hsN8T5l9qShFKY_KU8C9vjYGOP-Sir5ARt5CSvuY"
 })
 
 # Product model to store products in the database
@@ -66,7 +65,7 @@ def store():
     return render_template('store.html', products=products)
 
 # Dummy user credentials for the sake of example
-users = {"noha": "Noha@123"}
+users = {"noha": "Noha@123#"}
 
 @app.route('/admin')
 def admin():
